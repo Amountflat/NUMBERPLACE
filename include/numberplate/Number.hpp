@@ -19,6 +19,7 @@ namespace numberplate
                 N_9,
                 SIZE,
             };
+
         private:
             KIND m_kind;
 
