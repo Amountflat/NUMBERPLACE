@@ -1,23 +1,38 @@
 #include <iostream>
 #include <vector>
-#include <numberplate/Identifier.hpp>
+#include <numberplate/Square.hpp>
 
 using namespace numberplate;
 
 int main()
 {
-    ManagerIdentifier MI1, MI2;
-    Identifier id[5];
-
-    for(unsigned int i = 0 ; i < 2 ; i++) MI1.GetID(id[i]);
-    for(unsigned int i = 2 ; i < 4 ; i++) MI2.GetID(id[i]);
-
-    for(unsigned int x = 0 ; x < sizeof(id)/sizeof(id[0]) ; x++)
+    Square square;
+    std::vector<Square> vs;
+    Number::KIND kinds[] =
     {
-        for(unsigned int y = 0 ; y < sizeof(id)/sizeof(id[0]) ; y++)
-        {
-            printf("id[%d] == id[%d] -> %s\n", x, y, (id[x]==id[y]?"true":"false"));
-        }
+        Number::KIND::NONE,
+        Number::KIND::N_1,
+        Number::KIND::N_2,
+        Number::KIND::N_3,
+        Number::KIND::N_4,
+        Number::KIND::N_5,
+        Number::KIND::N_6,
+        Number::KIND::N_7,
+        Number::KIND::N_8,
+        Number::KIND::N_9,
+    };
+
+    for(auto c : kinds) for(auto a : kinds)
+    {
+        square.GetCorrect().GetKind() = c;
+        square.GetAnswer ().GetKind() = a;
+
+        vs.push_back(square);
+    }
+
+    for(auto s : vs)
+    {
+        printf("correct = %d, answer = %d\n", s.GetCorrect(), s.GetAnswer());
     }
 
     return 0;
