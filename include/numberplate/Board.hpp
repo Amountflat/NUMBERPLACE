@@ -1,6 +1,7 @@
 #pragma once
 
 #include <numberplate/Square.hpp>
+#include <numberplate/Cursor.hpp>
 
 namespace numberplate
 {
@@ -39,6 +40,6 @@ namespace numberplate
             void    Shuffle();
     };
 
-    void DisplayBoard       (Board& r_board, bool disp_correct = false);
+    void DisplayBoard       (Board& r_board, bool disp_correct = false, Cursor cursor = Cursor());
     void DisplayCorrectBoard(Board& r_board);
 }

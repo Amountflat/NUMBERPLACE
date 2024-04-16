@@ -1,6 +1,6 @@
 #include <numberplate/Board.hpp>
 
-void numberplate::DisplayBoard(Board& r, bool d)
+void numberplate::DisplayBoard(Board& r, bool d, Cursor c)
 {
     auto disp_line = []()
     {
@@ -14,17 +14,20 @@ void numberplate::DisplayBoard(Board& r, bool d)
         }
         printf("*\n");
     };
-    auto disp_internal = [&r, &d](unsigned int large_column, unsigned int small_column)
+    auto disp_internal = [&r, &d, &c](unsigned int large_column, unsigned int small_column)
     {
+        unsigned short row=static_cast<unsigned short>(c.GetInfoRow());
         numberplate::Number::KIND k;
         for(unsigned int i = 0 ; i < 3 ; i++)
         {
-            printf("| ");
+            printf("|");
+            if(row<i*3) printf(" ");
             for(unsigned int j = 0 ; j < 3 ; j++)
             {
                 auto& g = r.Get(j+i*3, small_column+large_column*3);
-                printf("%c ", (k=(d?g.GetCorrect():g.GetAnswer()).GetKind())==numberplate::Number::KIND::NONE?' ':static_cast<unsigned int>(k)+'0');
+                printf((c.GetInfoValid()==Cursor::INFORMATION::VALID_TRUE&&row==i*3+j&&(static_cast<unsigned short>(c.GetInfoColumn())>>4)==small_column+large_column*3?">%c<":row<i*3+j?"%c ":row>i*3+j?" %c":" %c "), (k=(d?g.GetCorrect():g.GetAnswer()).GetKind())==numberplate::Number::KIND::NONE?' ':static_cast<unsigned int>(k)+'0');
             }
+            if(row>=(i+1)*3) printf(" ");
         }
         printf("|\n");
     };
