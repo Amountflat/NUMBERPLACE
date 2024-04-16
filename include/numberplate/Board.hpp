@@ -38,4 +38,7 @@ namespace numberplate
             Square& Get    (unsigned int x, unsigned int y);
             void    Shuffle();
     };
+
+    void DisplayBoard       (Board& r_board, bool disp_correct = false);
+    void DisplayCorrectBoard(Board& r_board);
 }
