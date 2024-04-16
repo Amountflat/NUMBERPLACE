@@ -3,15 +3,26 @@ project(NUMBERPLATE CXX)
 
 set(EXE_NAME numberplate)
 
-set(SRC_NUMBERPLATE_IDENTIFIER)
-list(APPEND SRC_NUMBERPLATE_IDENTIFIER numberplate/Identifier/Identifier.cpp)
-list(APPEND SRC_NUMBERPLATE_IDENTIFIER numberplate/Identifier/operator.cpp)
-
 set(SRC_NUMBERPLATE_BOARD)
 list(APPEND SRC_NUMBERPLATE_BOARD numberplate/Board/Board.cpp)
 list(APPEND SRC_NUMBERPLATE_BOARD numberplate/Board/Get.cpp)
 list(APPEND SRC_NUMBERPLATE_BOARD numberplate/Board/ProductSet.cpp)
 list(APPEND SRC_NUMBERPLATE_BOARD numberplate/Board/Shuffle.cpp)
+
+set(SRC_NUMBERPLATE_CURSOR)
+list(APPEND SRC_NUMBERPLATE_CURSOR numberplate/Cursor/Cursor.cpp)
+list(APPEND SRC_NUMBERPLATE_CURSOR numberplate/Cursor/GetInfo.cpp)
+list(APPEND SRC_NUMBERPLATE_CURSOR numberplate/Cursor/GetInfoColumn.cpp)
+list(APPEND SRC_NUMBERPLATE_CURSOR numberplate/Cursor/GetInfoRow.cpp)
+list(APPEND SRC_NUMBERPLATE_CURSOR numberplate/Cursor/GetInfoValid.cpp)
+list(APPEND SRC_NUMBERPLATE_CURSOR numberplate/Cursor/Set.cpp)
+list(APPEND SRC_NUMBERPLATE_CURSOR numberplate/Cursor/SetColumn.cpp)
+list(APPEND SRC_NUMBERPLATE_CURSOR numberplate/Cursor/SetRow.cpp)
+list(APPEND SRC_NUMBERPLATE_CURSOR numberplate/Cursor/SetValid.cpp)
+
+set(SRC_NUMBERPLATE_IDENTIFIER)
+list(APPEND SRC_NUMBERPLATE_IDENTIFIER numberplate/Identifier/Identifier.cpp)
+list(APPEND SRC_NUMBERPLATE_IDENTIFIER numberplate/Identifier/operator.cpp)
 
 set(SRC_NUMBERPLATE_MANAGERIDENTIFIER)
 list(APPEND SRC_NUMBERPLATE_MANAGERIDENTIFIER numberplate/ManagerIdentifier/Erase.cpp)
@@ -30,6 +41,7 @@ list(APPEND SRC_NUMBERPLATE_SQUARE numberplate/Square/Square.cpp)
 
 set(SRC_NUMBERPLATE)
 list(APPEND SRC_NUMBERPLATE ${SRC_NUMBERPLATE_BOARD})
+list(APPEND SRC_NUMBERPLATE ${SRC_NUMBERPLATE_CURSOR})
 list(APPEND SRC_NUMBERPLATE ${SRC_NUMBERPLATE_IDENTIFIER})
 list(APPEND SRC_NUMBERPLATE ${SRC_NUMBERPLATE_MANAGERIDENTIFIER})
 list(APPEND SRC_NUMBERPLATE ${SRC_NUMBERPLATE_NUMBER})
