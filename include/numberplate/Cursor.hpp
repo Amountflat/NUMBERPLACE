@@ -50,6 +50,10 @@ namespace numberplate
             Cursor& SetRow   (INFORMATION);
             Cursor& SetColumn(INFORMATION);
             Cursor& SetValid (INFORMATION);
+            Cursor& MoveUp   ();
+            Cursor& MoveDown ();
+            Cursor& MoveRight();
+            Cursor& MoveLeft ();
 
         public:
             INFORMATION GetInfo      () const;
