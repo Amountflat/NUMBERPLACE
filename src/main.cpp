@@ -1,42 +1,36 @@
 #include <iostream>
 #include <vector>
-#include <numberplate/Board.hpp>
+#include <numberplate/Keyboard.hpp>
 
 using namespace numberplate;
 
 int main()
 {
-    Cursor cursor;
-    Board  board;
-    std::vector<Cursor::INFORMATION> row, column, valid;
+    Keyboard::KEY g;
+    Keyboard keyboard;
 
-    row.push_back(Cursor::INFORMATION::ROW_0);
-    row.push_back(Cursor::INFORMATION::ROW_2);
-    row.push_back(Cursor::INFORMATION::ROW_4);
-    row.push_back(Cursor::INFORMATION::ROW_6);
-    row.push_back(Cursor::INFORMATION::ROW_8);
-
-    column.push_back(Cursor::INFORMATION::COLUMN_0);
-    column.push_back(Cursor::INFORMATION::COLUMN_2);
-    column.push_back(Cursor::INFORMATION::COLUMN_4);
-    column.push_back(Cursor::INFORMATION::COLUMN_6);
-    column.push_back(Cursor::INFORMATION::COLUMN_8);
-
-    valid.push_back(Cursor::INFORMATION::VALID_FALSE);
-    valid.push_back(Cursor::INFORMATION::VALID_TRUE);
-
-
-    for(auto r : row)
+    while(true)
     {
-        cursor.SetRow(r);
-        for(auto c : column)
+        printf("\ninput:");
+        g = keyboard.Get();
+        if(static_cast<int>(Keyboard::KEY::LARGE_A)<=static_cast<int>(g)&&static_cast<int>(g)<=static_cast<int>(Keyboard::KEY::LARGE_Z))
+            printf("%c\n", static_cast<int>(g)-static_cast<int>(Keyboard::KEY::LARGE_A)+'A');
+        else if(static_cast<int>(Keyboard::KEY::SMALL_A)<=static_cast<int>(g)&&static_cast<int>(g)<=static_cast<int>(Keyboard::KEY::SMALL_Z))
+            printf("%c\n", static_cast<int>(g)-static_cast<int>(Keyboard::KEY::SMALL_A)+'a');
+        else if(g==Keyboard::KEY::ARROW_UP)
+            printf("up\n");
+        else if(g==Keyboard::KEY::ARROW_DOWN)
+            printf("down\n");
+        else if(g==Keyboard::KEY::ARROW_LEFT)
+            printf("left\n");
+        else if(g==Keyboard::KEY::ARROW_RIGHT)
+            printf("right\n");
+        else
+            printf("%d\n", static_cast<int>(g));
+        switch(g)
         {
-            cursor.SetColumn(c);
-            for(auto v : valid)
-            {
-                cursor.SetValid(v);
-                DisplayBoard(board, true, cursor);
-            }
+            case Keyboard::KEY::CTRL_C:
+                exit(0);
         }
     }
 
