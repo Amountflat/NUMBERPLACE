@@ -8,6 +8,7 @@ namespace numberplate
     class Square
     {
         private:
+            bool                m_question;
             Number              m_correct;
             Number              m_answer;
             Identifier          m_id;
@@ -19,8 +20,13 @@ namespace numberplate
             ~Square()              = default;
 
         public:
-            Number&     GetCorrect();
-            Number&     GetAnswer();
-            Identifier& GetID();
+            Number&     GetCorrect       ();
+            Number&     GetAnswer        ();
+            Identifier& GetID            ();
+            Square&     SwitchingQuestion();
+            Square&     SwitchingAnswer  ();
+
+        public:
+            Number GetDisplay();
     };
 }

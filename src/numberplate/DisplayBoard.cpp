@@ -25,7 +25,7 @@ void numberplate::DisplayBoard(Board& r, bool d, Cursor c)
             for(unsigned int j = 0 ; j < 3 ; j++)
             {
                 auto& g = r.Get(j+i*3, small_column+large_column*3);
-                printf((c.GetInfoValid()==Cursor::INFORMATION::VALID_TRUE&&row==i*3+j&&(static_cast<unsigned short>(c.GetInfoColumn())>>4)==small_column+large_column*3?">%c<":row<i*3+j?"%c ":row>i*3+j?" %c":" %c "), (k=(d?g.GetCorrect():g.GetAnswer()).GetKind())==numberplate::Number::KIND::NONE?' ':static_cast<unsigned int>(k)+'0');
+                printf((c.GetInfoValid()==Cursor::INFORMATION::VALID_TRUE&&row==i*3+j&&(static_cast<unsigned short>(c.GetInfoColumn())>>4)==small_column+large_column*3?">%c<":row<i*3+j?"%c ":row>i*3+j?" %c":" %c "), (k=(d?g.GetCorrect():g.GetDisplay()).GetKind())==numberplate::Number::KIND::NONE?' ':static_cast<unsigned int>(k)+'0');
             }
             if(row>=(i+1)*3) printf(" ");
         }
