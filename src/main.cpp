@@ -1,9 +1,9 @@
 #include <iostream>
 #include <vector>
-#include <numberplate/Keyboard.hpp>
-#include <numberplate/Board.hpp>
+#include <numberplace/Keyboard.hpp>
+#include <numberplace/Board.hpp>
 
-using namespace numberplate;
+using namespace numberplace;
 
 int main()
 {
