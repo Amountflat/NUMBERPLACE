@@ -57,35 +57,35 @@ int main()
                 break;
 
             case Keyboard::KEY::DELETE:
-                board.Get(static_cast<unsigned int>(cursor.GetInfoRow()), static_cast<unsigned int>(cursor.GetInfoColumn())>>4).GetAnswer().GetKind() = Number::KIND::NONE;
+                board.Get(cursor.GetInfoRow(), cursor.GetInfoColumn()).GetAnswer().GetKind() = Number::KIND::NONE;
                 break;
 
             case Keyboard::KEY::NUMBER_1:
-                board.Get(static_cast<unsigned int>(cursor.GetInfoRow()), static_cast<unsigned int>(cursor.GetInfoColumn())>>4).SetNumber(Number::KIND::N_1);
+                board.Get(cursor.GetInfoRow(), cursor.GetInfoColumn()).SetNumber(Number::KIND::N_1);
                 break;
             case Keyboard::KEY::NUMBER_2:
-                board.Get(static_cast<unsigned int>(cursor.GetInfoRow()), static_cast<unsigned int>(cursor.GetInfoColumn())>>4).SetNumber(Number::KIND::N_2);
+                board.Get(cursor.GetInfoRow(), cursor.GetInfoColumn()).SetNumber(Number::KIND::N_2);
                 break;
             case Keyboard::KEY::NUMBER_3:
-                board.Get(static_cast<unsigned int>(cursor.GetInfoRow()), static_cast<unsigned int>(cursor.GetInfoColumn())>>4).SetNumber(Number::KIND::N_3);
+                board.Get(cursor.GetInfoRow(), cursor.GetInfoColumn()).SetNumber(Number::KIND::N_3);
                 break;
             case Keyboard::KEY::NUMBER_4:
-                board.Get(static_cast<unsigned int>(cursor.GetInfoRow()), static_cast<unsigned int>(cursor.GetInfoColumn())>>4).SetNumber(Number::KIND::N_4);
+                board.Get(cursor.GetInfoRow(), cursor.GetInfoColumn()).SetNumber(Number::KIND::N_4);
                 break;
             case Keyboard::KEY::NUMBER_5:
-                board.Get(static_cast<unsigned int>(cursor.GetInfoRow()), static_cast<unsigned int>(cursor.GetInfoColumn())>>4).SetNumber(Number::KIND::N_5);
+                board.Get(cursor.GetInfoRow(), cursor.GetInfoColumn()).SetNumber(Number::KIND::N_5);
                 break;
             case Keyboard::KEY::NUMBER_6:
-                board.Get(static_cast<unsigned int>(cursor.GetInfoRow()), static_cast<unsigned int>(cursor.GetInfoColumn())>>4).SetNumber(Number::KIND::N_6);
+                board.Get(cursor.GetInfoRow(), cursor.GetInfoColumn()).SetNumber(Number::KIND::N_6);
                 break;
             case Keyboard::KEY::NUMBER_7:
-                board.Get(static_cast<unsigned int>(cursor.GetInfoRow()), static_cast<unsigned int>(cursor.GetInfoColumn())>>4).SetNumber(Number::KIND::N_7);
+                board.Get(cursor.GetInfoRow(), cursor.GetInfoColumn()).SetNumber(Number::KIND::N_7);
                 break;
             case Keyboard::KEY::NUMBER_8:
-                board.Get(static_cast<unsigned int>(cursor.GetInfoRow()), static_cast<unsigned int>(cursor.GetInfoColumn())>>4).SetNumber(Number::KIND::N_8);
+                board.Get(cursor.GetInfoRow(), cursor.GetInfoColumn()).SetNumber(Number::KIND::N_8);
                 break;
             case Keyboard::KEY::NUMBER_9:
-                board.Get(static_cast<unsigned int>(cursor.GetInfoRow()), static_cast<unsigned int>(cursor.GetInfoColumn())>>4).SetNumber(Number::KIND::N_9);
+                board.Get(cursor.GetInfoRow(), cursor.GetInfoColumn()).SetNumber(Number::KIND::N_9);
                 break;
         }
         printf("\n");

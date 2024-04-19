@@ -36,7 +36,8 @@ namespace numberplace
             static Squares ProductSet(Squares,      Squares);
 
         public:
-            Square& Get    (unsigned int x, unsigned int y);
+            Square& Get    (unsigned int        x, unsigned int        y);
+            Square& Get    (Cursor::INFORMATION x, Cursor::INFORMATION y);
             void    Shuffle();
     };
 

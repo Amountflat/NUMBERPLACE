@@ -65,6 +65,7 @@ list(APPEND SRC_NUMBERPLACE numberplace/DisplayCorrectBoard.cpp)
 set(SRC)
 list(APPEND SRC ${SRC_NUMBERPLACE})
 list(APPEND SRC main.cpp)
+list(APPEND SRC operator.cpp)
 
 add_executable(${EXE_NAME} ${SRC})
 target_include_directories(${EXE_NAME} PUBLIC ../include)

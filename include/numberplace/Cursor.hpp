@@ -62,3 +62,21 @@ namespace numberplace
             INFORMATION GetInfoValid () const;
     };
 }
+
+numberplace::Cursor::INFORMATION& operator&=(numberplace::Cursor::INFORMATION& info1, const numberplace::Cursor::INFORMATION info2);
+numberplace::Cursor::INFORMATION& operator|=(numberplace::Cursor::INFORMATION& info1, const numberplace::Cursor::INFORMATION info2);
+
+numberplace::Cursor::INFORMATION operator&(const numberplace::Cursor::INFORMATION info1, const numberplace::Cursor::INFORMATION info2);
+numberplace::Cursor::INFORMATION operator|(const numberplace::Cursor::INFORMATION info1, const numberplace::Cursor::INFORMATION info2);
+
+inline numberplace::Cursor::INFORMATION operator&(const numberplace::Cursor::INFORMATION info1, const numberplace::Cursor::INFORMATION info2)
+{
+    numberplace::Cursor::INFORMATION info;
+    return (info = info1) &= info2;
+}
+
+inline numberplace::Cursor::INFORMATION operator|(const numberplace::Cursor::INFORMATION info1, const numberplace::Cursor::INFORMATION info2)
+{
+    numberplace::Cursor::INFORMATION info;
+    return (info = info1) |= info2;
+}
