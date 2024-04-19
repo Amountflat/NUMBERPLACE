@@ -38,4 +38,6 @@ void numberplace::DisplayBoard(Board& r, bool d, Cursor c)
         for(unsigned int j = 0 ; j < 3 ; j++) disp_internal(i, j);
     }
     disp_line();
+
+    printf("MODE:%s\n", r.Get(static_cast<unsigned int>(c.GetInfoRow()),static_cast<unsigned int>(c.GetInfoColumn())>>4).GetQuestion()?"Question":"Answer");
 }

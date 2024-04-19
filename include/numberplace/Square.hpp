@@ -20,11 +20,13 @@ namespace numberplace
             ~Square()              = default;
 
         public:
+            bool        GetQuestion      ();
             Number&     GetCorrect       ();
             Number&     GetAnswer        ();
             Identifier& GetID            ();
             Square&     SwitchingQuestion();
             Square&     SwitchingAnswer  ();
+            Square&     SetNumber        (Number::KIND);
 
         public:
             Number GetDisplay();

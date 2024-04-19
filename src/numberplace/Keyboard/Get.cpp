@@ -25,6 +25,21 @@ Keyboard::KEY Keyboard::Get()
                     return KEY::ARROW_RIGHT;
             }
 
+        case 0x7f:
+            return KEY::DELETE;
+
+        case '0':
+        case '1':
+        case '2':
+        case '3':
+        case '4':
+        case '5':
+        case '6':
+        case '7':
+        case '8':
+        case '9':
+            return static_cast<KEY>(g-'0'+static_cast<int>(KEY::NUMBER_0));
+
         case 'a':
         case 'b':
         case 'c':
