@@ -25,7 +25,7 @@ void numberplace::DisplayBoard(Board& r, bool d, Cursor c)
             for(unsigned int j = 0 ; j < 3 ; j++)
             {
                 auto& g = r.Get(j+i*3, small_column+large_column*3);
-                printf((c.GetInfoValid()==Cursor::INFORMATION::VALID_TRUE&&row==i*3+j&&(static_cast<unsigned short>(c.GetInfoColumn())>>4)==small_column+large_column*3?">%c<":row<i*3+j?"%c ":row>i*3+j?" %c":" %c "), (k=(d?g.GetCorrect():g.GetDisplay()).GetKind())==numberplace::Number::KIND::NONE?' ':static_cast<unsigned int>(k)+'0');
+                printf((c.GetInfoValid()==Cursor::INFORMATION::VALID_TRUE&&row==i*3+j&&(static_cast<unsigned short>(c.GetInfoColumn())>>4)==small_column+large_column*3?">%c<":row<i*3+j?"%c ":row>i*3+j?" %c":" %c "), g.GetMemo()?'M':(k=(d?g.GetCorrect():g.GetDisplay()).GetKind())==numberplace::Number::KIND::NONE?' ':static_cast<unsigned int>(k)+'0');
             }
             if(row>=(i+1)*3) printf(" ");
         }
@@ -39,5 +39,11 @@ void numberplace::DisplayBoard(Board& r, bool d, Cursor c)
     }
     disp_line();
 
-    printf("MODE:%s\n", r.Get(static_cast<unsigned int>(c.GetInfoRow()),static_cast<unsigned int>(c.GetInfoColumn())>>4).GetQuestion()?"Question":"Answer");
+    printf("MODE:%s", r.Get(c.GetInfoRow(), c.GetInfoColumn()).GetQuestion()?"Question":r.Get(c.GetInfoRow(), c.GetInfoColumn()).GetMemo()?"Memo":"Answer");
+
+    for(auto& n : r.Get(c.GetInfoRow(), c.GetInfoColumn()).GetMemoNumbers())
+        if(n.GetKind()!=Number::KIND::NONE)
+            printf(" %d", n.GetKind());
+
+    printf("\n");
 }

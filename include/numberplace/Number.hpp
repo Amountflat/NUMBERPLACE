@@ -1,5 +1,7 @@
 #pragma once
 
+#include <compare>
+
 namespace numberplace
 {
     class Number
@@ -34,5 +36,11 @@ namespace numberplace
 
         public:
             KIND& GetKind();
+
+        public:
+            Number& operator=(const Number& cr_number);
+
+        public:
+            friend auto operator<=>(const Number& number1, const Number& number2) = default;
     };
 }
