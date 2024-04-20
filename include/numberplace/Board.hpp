@@ -43,6 +43,7 @@ namespace numberplace
             Square& Get              (unsigned int        x, unsigned int        y);
             Square& Get              (Cursor::INFORMATION x, Cursor::INFORMATION y);
             void    Shuffle          ();
+            Board&  AutomaticAnswer  ();
     };
 
     void DisplayBoard       (Board& r_board, bool disp_correct = false, Cursor cursor = Cursor());

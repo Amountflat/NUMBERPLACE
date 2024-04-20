@@ -4,6 +4,7 @@ project(NUMBERPLACE CXX)
 set(EXE_NAME numberplate)
 
 set(SRC_NUMBERPLACE_BOARD)
+list(APPEND SRC_NUMBERPLACE_BOARD numberplace/Board/AutomaticAnswer.cpp)
 list(APPEND SRC_NUMBERPLACE_BOARD numberplace/Board/Board.cpp)
 list(APPEND SRC_NUMBERPLACE_BOARD numberplace/Board/DuplicateJudgment.cpp)
 list(APPEND SRC_NUMBERPLACE_BOARD numberplace/Board/Get.cpp)

@@ -60,6 +60,11 @@ int main()
                 board.Get(cursor.GetInfoRow(), cursor.GetInfoColumn()).GetAnswer().GetKind() = Number::KIND::NONE;
                 break;
 
+            case Keyboard::KEY::LARGE_A:
+            case Keyboard::KEY::SMALL_A:
+                board.AutomaticAnswer();
+                break;
+
             case Keyboard::KEY::LARGE_M:
             case Keyboard::KEY::SMALL_M:
                 if(board.Get(cursor.GetInfoRow(), cursor.GetInfoColumn()).GetMemo())
