@@ -46,4 +46,6 @@ void numberplace::DisplayBoard(Board& r, bool d, Cursor c)
             printf(" %d", n.GetKind());
 
     printf("\n");
+
+    printf("Duplicate Number : %s", r.DuplicateJudgment()?"true":"false");
 }

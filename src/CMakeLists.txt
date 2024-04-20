@@ -5,9 +5,12 @@ set(EXE_NAME numberplate)
 
 set(SRC_NUMBERPLACE_BOARD)
 list(APPEND SRC_NUMBERPLACE_BOARD numberplace/Board/Board.cpp)
+list(APPEND SRC_NUMBERPLACE_BOARD numberplace/Board/DuplicateJudgment.cpp)
 list(APPEND SRC_NUMBERPLACE_BOARD numberplace/Board/Get.cpp)
+list(APPEND SRC_NUMBERPLACE_BOARD numberplace/Board/ProductRowAndColumn.cpp)
 list(APPEND SRC_NUMBERPLACE_BOARD numberplace/Board/ProductSet.cpp)
 list(APPEND SRC_NUMBERPLACE_BOARD numberplace/Board/Shuffle.cpp)
+list(APPEND SRC_NUMBERPLACE_BOARD numberplace/Board/SumSet.cpp)
 
 set(SRC_NUMBERPLACE_CURSOR)
 list(APPEND SRC_NUMBERPLACE_CURSOR numberplace/Cursor/Cursor.cpp)

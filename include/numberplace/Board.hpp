@@ -33,12 +33,16 @@ namespace numberplace
             // static void    Swap      (Squares&,     Squares&);
             // static void    Swap      (SmallRow&,    SmallRow&);
             // static void    Swap      (SmallColumn&, SmallColumn&);
-            static Squares ProductSet(Squares,      Squares);
+            static bool    DuplicateJudgment  (Squares);
+            static Squares SumSet             (Squares,  Squares);
+            static Squares ProductSet         (Squares,  Squares);
+            static Squares ProductRowAndColumn(SmallRow, SmallColumn);
 
         public:
-            Square& Get    (unsigned int        x, unsigned int        y);
-            Square& Get    (Cursor::INFORMATION x, Cursor::INFORMATION y);
-            void    Shuffle();
+            bool    DuplicateJudgment();
+            Square& Get              (unsigned int        x, unsigned int        y);
+            Square& Get              (Cursor::INFORMATION x, Cursor::INFORMATION y);
+            void    Shuffle          ();
     };
 
     void DisplayBoard       (Board& r_board, bool disp_correct = false, Cursor cursor = Cursor());

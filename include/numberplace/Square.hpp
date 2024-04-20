@@ -29,7 +29,7 @@ namespace numberplace
             Identifier&          GetID            ();
             Square&              SwitchingQuestion();
             Square&              SwitchingAnswer  ();
-            Square&              SwitchingMemo  ();
+            Square&              SwitchingMemo    ();
             Square&              SetNumber        (Number::KIND);
 
         public:
